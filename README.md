@@ -202,6 +202,21 @@ docker compose up -d
 ```
 
 ---
+## 📸 Capturas 
+
+### DAG Cargado Correctamente en Airflow
+
+![DAG](assets/Screenshots/dag-visible.png)
+
+### Interfaz Web de Airflow
+
+![Airflow UI](assets/Screenshots/airflow-ui.png)
+
+### Vista Graph del Pipeline
+
+![Graph](assets/Screenshots/Airflow-graph.png)
+
+---
 
 ## 📈 Próximos Pasos (Ideas para extender)
 
