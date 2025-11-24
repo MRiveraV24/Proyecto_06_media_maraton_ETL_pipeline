@@ -1,0 +1,26 @@
+pos_general,pos_categoria,dorsal,nombre_corredor,genero,rango_edad,categoria,tiempo_oficial,tiempo_segundos,ritmo_min_km,velocidad_kmh
+1,1,2001,Carlos Andrés Díaz Moreno,Varones,18 a 29 años,Varones 18 a 29 años,1:12:45,4365,3:26,17.4
+2,1,2102,Miguel Ángel Torres,Varones,30 a 39 años,Varones 30 a 39 años,1:15:22,4522,3:34,16.8
+3,2,2015,Juan Pablo Soto Vera,Varones,18 a 29 años,Varones 18 a 29 años,1:16:08,4568,3:36,16.63
+4,2,2156,Roberto Carlos Muñoz,Varones,30 a 39 años,Varones 30 a 39 años,1:18:33,4713,3:43,16.12
+5,1,2201,Andrea Paz González,Damas,18 a 29 años,Damas 18 a 29 años,1:19:45,4785,3:46,15.87
+15,3,2178,Pedro José Ramírez,Varones,30 a 39 años,Varones 30 a 39 años,1:25:12,5112,4:02,14.86
+22,1,2245,María José Pérez Silva,Damas,30 a 39 años,Damas 30 a 39 años,1:28:56,5336,4:12,14.24
+35,1,2301,Francisco Javier López,Varones,40 a 49 años,Varones 40 a 49 años,1:32:18,5538,4:22,13.72
+48,2,2267,Carmen Gloria Fuentes,Damas,30 a 39 años,Damas 30 a 39 años,1:35:44,5744,4:32,13.22
+56,4,2189,Andrés Felipe Castillo,Varones,30 a 39 años,Varones 30 a 39 años,1:37:22,5842,4:36,13.0
+72,2,2312,Patricia Andrea Núñez,Damas,40 a 49 años,Damas 40 a 49 años,1:40:15,6015,4:45,12.63
+89,5,2195,Diego Alejandro Vera,Varones,30 a 39 años,Varones 30 a 39 años,1:42:58,6178,4:52,12.3
+127,47,2395,Abel Ballon Aguirre,Varones,30 a 39 años,Varones 30 a 39 años,1:46:32,6392,5:02,11.88
+145,3,2334,Claudia Marcela Rojas,Damas,40 a 49 años,Damas 40 a 49 años,1:49:18,6558,5:10,11.58
+171,43,2296,Alberto Ignacio Salas Nicolau,Varones,40 a 49 años,Varones 40 a 49 años,1:52:08,6728,5:18,11.29
+198,12,2223,Valentina Paz Morales,Damas,18 a 29 años,Damas 18 a 29 años,1:55:42,6942,5:29,10.94
+215,8,2401,José Manuel Contreras,Varones,50 a 59 años,Varones 50 a 59 años,1:58:15,7095,5:36,10.71
+234,4,2356,Rosa Elena Martínez,Damas,40 a 49 años,Damas 40 a 49 años,2:02:33,7353,5:48,10.33
+256,15,2418,Sergio Antonio Pizarro,Varones,50 a 59 años,Varones 50 a 59 años,2:06:48,7608,6:00,9.98
+266,19,2084,Alexandrina Vivar Diaz,Damas,40 a 49 años,Damas 40 a 49 años,2:09:40,7780,6:08,9.76
+278,1,2501,Manuel Eduardo Lagos,Varones,60+ años,Varones 60+ años,2:12:22,7942,6:16,9.56
+289,5,2445,Isabel Cristina Araya,Damas,50 a 59 años,Damas 50 a 59 años,2:15:55,8155,6:26,9.31
+301,2,2512,Héctor Raúl Mendoza,Varones,60+ años,Varones 60+ años,2:20:18,8418,6:38,9.02
+315,1,2521,Teresa De Jesús Campos,Damas,60+ años,Damas 60+ años,2:25:42,8742,6:54,8.69
+328,6,2467,Gabriela Fernanda Ríos,Damas,50 a 59 años,Damas 50 a 59 años,2:30:15,9015,7:07,8.43

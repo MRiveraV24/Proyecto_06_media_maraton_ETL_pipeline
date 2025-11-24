@@ -1,0 +1,11 @@
+categoria,tiempo_promedio_seg,tiempo_mejor_seg,tiempo_peor_seg,cantidad_corredores,velocidad_promedio_kmh,ritmo_promedio
+Damas 18 a 29 años,5863.5,4785,6942,2,13.4,4:37
+Damas 30 a 39 años,5540.0,5336,5744,2,13.73,4:22
+Damas 40 a 49 años,6926.5,6015,7780,4,11.08,5:28
+Damas 50 a 59 años,8585.0,8155,9015,2,8.87,6:46
+Damas 60+ años,8742.0,8742,8742,1,8.69,6:54
+Varones 18 a 29 años,4466.5,4365,4568,2,17.02,3:31
+Varones 30 a 39 años,5459.83,4522,6392,6,14.16,4:18
+Varones 40 a 49 años,6133.0,5538,6728,2,12.5,4:50
+Varones 50 a 59 años,7351.5,7095,7608,2,10.34,5:48
+Varones 60+ años,8180.0,7942,8418,2,9.29,6:27
