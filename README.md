@@ -208,7 +208,7 @@ docker compose up -d
 
 ### Vista Graph del Pipeline
 
-![Graph](media_maraton_pipeline/dags/Airflow_graph.png)
+![Graph](Proyecto_06_media_maraton_ETL_pipeline/dags/Airflow_graph.png)
 
 ---
 
