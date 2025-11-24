@@ -1,0 +1,127 @@
+# docker-compose.yaml
+# Configuración de Airflow para desarrollo local
+# ===============================================
+# Esta es una versión SIMPLIFICADA ideal para aprendizaje.
+# Para producción, consulta la documentación oficial de Airflow.
+
+version: '3.8'
+
+# ─────────────────────────────────────────────────────────────
+# Variables de entorno compartidas entre servicios
+# ─────────────────────────────────────────────────────────────
+x-airflow-common: &airflow-common
+  # Usamos nuestra imagen personalizada (construida desde Dockerfile)
+  build: .
+  environment:
+    # Executor: LocalExecutor es más simple que CeleryExecutor
+    # Ideal para desarrollo y pipelines pequeños/medianos
+    - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    
+    # Conexión a PostgreSQL (nuestra base de datos de metadatos)
+    - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+    
+    # Deshabilitamos la carga de DAGs de ejemplo (menos ruido)
+    - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    
+    # Fernet key para encriptar conexiones (en producción, usa una segura)
+    - AIRFLOW__CORE__FERNET_KEY=zTvhk7dFz3N1RQplRe9_5EPfL8VJ9L1Q8b9g5h6i7j8=
+    
+    # Timezone local para Chile
+    - AIRFLOW__CORE__DEFAULT_TIMEZONE=America/Santiago
+    
+    # Intervalo de escaneo de DAGs (cada 30 segundos busca cambios)
+    - AIRFLOW__SCHEDULER__DAG_DIR_LIST_INTERVAL=30
+    
+    # Usuario y contraseña para la UI web (desarrollo)
+    - _AIRFLOW_WWW_USER_CREATE=true
+    - _AIRFLOW_WWW_USER_USERNAME=admin
+    - _AIRFLOW_WWW_USER_PASSWORD=admin
+    
+    # Path adicional para que Python encuentre nuestros módulos
+    - PYTHONPATH=/opt/airflow/scripts
+    
+  volumes:
+    # Montamos nuestras carpetas locales dentro del contenedor
+    # Esto permite editar código sin reconstruir la imagen
+    - ./dags:/opt/airflow/dags          # DAGs de Airflow
+    - ./scripts:/opt/airflow/scripts    # Nuestras funciones Python
+    - ./data:/opt/airflow/data          # Carpetas Bronze/Silver/Gold
+    - ./logs:/opt/airflow/logs          # Logs para debugging
+    
+  depends_on:
+    postgres:
+      condition: service_healthy
+
+# ─────────────────────────────────────────────────────────────
+# Definición de servicios
+# ─────────────────────────────────────────────────────────────
+services:
+  # PostgreSQL: Base de datos para metadatos de Airflow
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    volumes:
+      # Persistimos los datos de PostgreSQL
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      # Verificamos que PostgreSQL esté listo antes de iniciar Airflow
+      test: ["CMD-SHELL", "pg_isready -U airflow"]
+      interval: 5s
+      retries: 5
+    ports:
+      - "5432:5432"
+
+  # Airflow Init: Inicializa la base de datos y crea el usuario admin
+  airflow-init:
+    <<: *airflow-common
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        # Esperamos a que la DB esté lista
+        airflow db init
+        # Creamos el usuario admin si no existe
+        airflow users create \
+          --username admin \
+          --password admin \
+          --firstname Admin \
+          --lastname User \
+          --role Admin \
+          --email admin@example.com || true
+    restart: "no"
+
+  # Airflow Webserver: La interfaz web (UI)
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      # Accedemos a la UI en http://localhost:8081
+      - "8081:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: always
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+  # Airflow Scheduler: El "cerebro" que ejecuta las tareas
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    restart: always
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+# ─────────────────────────────────────────────────────────────
+# Volúmenes persistentes
+# ─────────────────────────────────────────────────────────────
+volumes:
+  postgres_data:
+    # Los datos de PostgreSQL persisten aunque detengas los contenedores
