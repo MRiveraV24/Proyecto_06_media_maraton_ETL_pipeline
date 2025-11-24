@@ -1,0 +1,12 @@
+# requirements.txt
+# Dependencias para el Pipeline Media Maratón La Serena 2024
+# ============================================================
+
+# Manipulación de datos - El corazón de nuestro pipeline
+pandas==2.1.4
+
+# Para leer archivos Excel (openpyxl es el motor recomendado)
+openpyxl==3.1.2
+
+# Aunque Airflow ya lo incluye, lo explicitamos para desarrollo local
+apache-airflow==2.8.1
