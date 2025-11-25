@@ -724,8 +724,8 @@ def test_velocidad_realista():
 
 ```bash
 # Opción A: Con Git
-git clone https://github.com/tu-usuario/media_maraton_pipeline.git
-cd media_maraton_pipeline
+git clone https://github.com/MRiveraV24/Proyecto_06_media_maraton_ETL_pipeline.git
+cd Proyecto_06_media_maraton_ETL_pipeline
 
 # Opción B: Descarga manual
 # Descarga el ZIP y extrae en tu carpeta de proyectos
@@ -973,6 +973,9 @@ pos_general,dorsal,nombre_corredor,categoria,tiempo_oficial,ritmo_min_km,velocid
 [2024-11-23, 22:49:16] INFO - 🥉 Iniciando proceso BRONZE - Ingesta de datos crudos
 [2024-11-23, 22:49:16] INFO - ✅ Bronze completado: 25 registros guardados en /opt/airflow/data/bronze/resultados_raw.csv
 ```
+## 📸 Captura Real de la Vista Graph del Pipeline 
+
+![Graph](dags/Airflow_graph.png)
 
 #### Logs desde CLI
 
@@ -1109,11 +1112,11 @@ in the Software without restriction...
 
 ## 📧 Contacto
 
-**Autor:** [Tu Nombre]
+**Autor:** [Marcelo Rivera Vega]
 
-- **GitHub:** [@tu-usuario](https://github.com/tu-usuario)
-- **LinkedIn:** [Tu Perfil](https://linkedin.com/in/tu-perfil)
-- **Email:** tu.email@example.com
+- **GitHub:** [@MRiveraV24](https://github.com/MRiveraV24)
+- **LinkedIn:** [marcelo-rivera-vega](https://linkedin.com/in/marcelo-rivera-vega)
+- **Email:** tu.marcelo.rivera.vega@gmail.com
 
 ---
 
@@ -1182,7 +1185,7 @@ in the Software without restriction...
 
 **⭐ Si este proyecto te fue útil, considera darle una estrella en GitHub!**
 
-**💬 ¿Preguntas o sugerencias? Abre un [Issue](https://github.com/tu-usuario/media_maraton_pipeline/issues)**
+**💬 ¿Preguntas o sugerencias? Abre un [Issue](https://github.com/MRiveraV24/Proyecto_06_media_maraton_ETL_pipeline/issues)**
 
 ---
 
