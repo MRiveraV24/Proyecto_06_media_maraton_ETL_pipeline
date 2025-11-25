@@ -834,37 +834,31 @@ Para ejecutar automáticamente cada día:
 ```
 media_maraton_pipeline/
 │
-├── dags/                              # DAGs de Airflow
-│   └── media_maraton_dag.py          # DAG principal del pipeline
+├── dags/                        # DAGs de Airflow
+│   └── media_maraton_dag.py     # DAG principal del pipeline
 │
-├── scripts/                           # Lógica de negocio
-│   ├── __init__.py                   # Inicializador de paquete
-│   └── pipeline_tasks.py             # Funciones Bronze/Silver/Gold
+├── scripts/                     # Lógica de negocio
+│   ├── __init__.py              # Inicializador de paquete
+│   └── pipeline_tasks.py        # Funciones Bronze/Silver/Gold
 │
-├── data/                              # Datos organizados por capa
-│   ├── bronze/                       # Capa raw
-│   │   └── resultados_raw.csv        # Datos crudos (generado)
-│   ├── silver/                       # Capa limpia
-│   │   └── resultados_clean.csv      # Datos transformados (generado)
-│   └── gold/                         # Capa de KPIs
-│       ├── kpi_estadisticas_generales.csv  # (generado)
-│       ├── kpi_tiempo_por_categoria.csv    # (generado)
-│       ├── kpi_top5_por_genero.csv         # (generado)
-│       ├── kpi_distribucion_edad.csv       # (generado)
-│       └── kpi_top10_ritmo.csv             # (generado)
+├── data/                          # Datos organizados por capa
+│   ├── bronze/                   # Capa raw
+│   │   └── resultados_raw.csv    # Datos crudos (generado)
+│   ├── silver/                   # Capa limpia
+│   │   └── resultados_clean.csv  # Datos transformados (generado)
+│   └── gold/                     # Capa de KPIs
+│       ├── kpi_estadisticas_generales.csv
+│       ├── kpi_tiempo_por_categoria.csv
+│       ├── kpi_top5_por_genero.csv
+│       ├── kpi_distribucion_edad.csv
+│       └── kpi_top10_ritmo.csv
 │
-├── logs/                              # Logs de Airflow
-│   └── dag_id=pipeline_media_maraton.../  # (auto-generado)
-│
-├── docker-compose.yaml                # Definición de servicios Docker
-├── Dockerfile                         # Imagen personalizada de Airflow
-├── requirements.txt                   # Dependencias Python
-├── README.md                          # Este archivo
-├── TUTORIAL_INICIO.md                 # Guía de inicio rápido
-├── inicio_airflow.bat                 # Script de inicio (Windows)
-└── detener_airflow.bat                # Script de detención (Windows)
+├── logs/                       # Logs de Airflow (auto-generado)
+├── docker-compose.yaml         # Orquestación de contenedores
+├── Dockerfile                  # Imagen personalizada  de Airflow
+├── requirements.txt            # Dependencias Python
+└── README.md                   # Este archivo
 ```
-
 ---
 
 ## 📊 KPIs Generados
@@ -973,7 +967,7 @@ pos_general,dorsal,nombre_corredor,categoria,tiempo_oficial,ritmo_min_km,velocid
 [2024-11-23, 22:49:16] INFO - 🥉 Iniciando proceso BRONZE - Ingesta de datos crudos
 [2024-11-23, 22:49:16] INFO - ✅ Bronze completado: 25 registros guardados en /opt/airflow/data/bronze/resultados_raw.csv
 ```
-## 📸 Captura Real de la Vista Graph del Pipeline 
+#### 📸 Captura Real de la Vista Graph del Pipeline 
 
 ![Graph](dags/Airflow_graph.png)
 
@@ -1112,11 +1106,11 @@ in the Software without restriction...
 
 ## 📧 Contacto
 
-**Autor:** [Marcelo Rivera Vega]
+**Autor:** Marcelo Rivera Vega,Data Engineering
 
-- **GitHub:** [@MRiveraV24](https://github.com/MRiveraV24)
+- **GitHub:**   [MRiveraV24](https://github.com/MRiveraV24)
 - **LinkedIn:** [marcelo-rivera-vega](https://linkedin.com/in/marcelo-rivera-vega)
-- **Email:** tu.marcelo.rivera.vega@gmail.com
+- **Email:**    marcelo.rivera.vega@gmail.com
 
 ---
 
