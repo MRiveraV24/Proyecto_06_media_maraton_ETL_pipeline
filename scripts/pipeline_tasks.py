@@ -6,8 +6,8 @@ Funciones de procesamiento para el Pipeline Media Maratón La Serena 2024.
 Este módulo implementa la arquitectura Medallón (Bronze → Silver → Gold)
 con funciones puras, bien documentadas y con manejo de errores.
 
-Autor: Tu nombre aquí
-Fecha: 2024
+Autor: Marcelo Rivera Vega
+Fecha: 2025
 """
 
 import re
@@ -564,3 +564,4 @@ if __name__ == "__main__":
     print("\n" + "=" * 60)
     print("✅ Pipeline completado exitosamente!")
     print("=" * 60)
+
