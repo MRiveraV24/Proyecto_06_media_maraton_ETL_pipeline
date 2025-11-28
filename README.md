@@ -9,24 +9,89 @@
 
 ---
 
+## 📊 Vista General del Proyecto (Resumen Ejecutivo)
+
+Este resumen ejecutivo articula la propuesta única de valor del pipeline de datos de la Media Maratón La Serena 2024, conectando el problema, la tecnología y el logro principal.
+
+### 🎯 Elementos Clave
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Problema Central** | Procesamiento manual lento y propenso a errores de resultados de carreras, que se publican en formatos poco estructurados (como tablas HTML con texto libre), impidiendo análisis oportunos y reproducibles. |
+| **Stack Tecnológico Clave** | Orquestación robusta con Apache Airflow (versión 2.8.1), procesamiento intensivo de datos con Pandas (versión 2.1.4), y garantía de entorno mediante Docker. |
+| **Valor Entregado** | El pipeline transforma datos desestructurados en insights accionables (KPIs) en minutos, no en horas, apoyando la toma de decisiones estratégica, la planificación de futuras ediciones y la comunicación de prensa. |
+| **Logro Principal y Diferenciador** | Implementación ejemplar de la Arquitectura Medallion (Bronze, Silver, Gold), complementada con un robusto framework de Calidad de Datos en múltiples capas (validaciones Bronze, Silver, y Gold), asegurando la fiabilidad, trazabilidad y escalabilidad de los insights. |
+
+---
+
+### I. El Desafío
+
+En el contexto del **running competitivo**, aunque los resultados de una carrera son una fuente valiosa de información, los datos suelen presentarse en **formatos poco estructurados**. Específicamente, los resultados de la Media Maratón La Serena 2024 se publicaron en una **tabla HTML con texto libre**. 
+
+Esta falta de estructura dificulta:
+- ❌ La identificación de patrones
+- ❌ La comparación de desempeños
+- ❌ El cálculo automatizado de KPIs
+- ❌ La reutilización del análisis
+
+**Resultado:** El análisis requiere trabajo manual, es propenso a errores y consume tiempo valioso que podría dedicarse a insights de mayor valor.
+
+---
+
+### II. La Solución
+
+Este proyecto implementa un **pipeline de datos automatizado y containerizado**, orquestado con **Apache Airflow** y utilizando **Docker** para garantizar la reproducibilidad y la portabilidad. 
+
+#### Características Principales:
+
+✅ **Ingesta Automatizada** - Captura de datos desestructurados sin intervención manual  
+✅ **Transformación Inteligente** - Data wrangling con Pandas y expresiones regulares  
+✅ **Generación de KPIs** - Insights accionables en minutos, no en horas  
+✅ **Arquitectura Medallion** - Bronze (raw), Silver (clean), Gold (KPIs)  
+✅ **Framework de Calidad** - Validaciones en múltiples capas para garantizar confianza en los datos  
+✅ **Reproducibilidad** - Containerización con Docker para portabilidad total  
+✅ **Escalabilidad** - Diseño modular que crece con las necesidades del negocio  
+
+#### Resultado Final:
+
+Un sistema **fiable, reproducible y escalable** que aplica las mejores prácticas de la industria, asegurando fundamentalmente la **confianza en los datos** y acelerando el tiempo de valor desde datos crudos hasta insights accionables.
+
+```
+Datos Desestructurados → Pipeline Automatizado → Insights Accionables
+     (Horas/Manual)              (Minutos)           (Confiables)
+```
+
+
+
+
+
+
+
+
+
+
+
+---
+
 ## 📋 Tabla de Contenidos
 
-1. [Objetivos](#-objetivos)
-2. [Descripción del Conjunto de Datos](#-descripción-del-conjunto-de-datos)
-3. [Stack Tecnológico](#-stack-tecnológico)
-4. [Arquitectura del Proyecto](#-arquitectura-del-proyecto)
-5. [Flujo de los Datos](#-flujo-de-los-datos)
-6. [Calidad de los Datos](#-calidad-de-los-datos)
-7. [Instalación y Configuración](#-instalación-y-configuración)
-8. [Uso del Pipeline](#-uso-del-pipeline)
-9. [Estructura del Proyecto](#-estructura-del-proyecto)
-10. [KPIs Generados](#-kpis-generados)
-11. [Monitoreo y Logs](#-monitoreo-y-logs)
-12. [Troubleshooting](#-troubleshooting)
-13. [Roadmap](#-roadmap)
-14. [Contribuciones](#-contribuciones)
-15. [Licencia](#-licencia)
-16. [Contacto](#-contacto)
+1. [Vista General del Proyecto](#-vista-general-del-proyecto-resumen-ejecutivo)
+2. [Objetivos](#-objetivos)
+3. [Descripción del Conjunto de Datos](#-descripción-del-conjunto-de-datos)
+4. [Stack Tecnológico](#-stack-tecnológico)
+5. [Arquitectura del Proyecto](#-arquitectura-del-proyecto)
+6. [Flujo de los Datos](#-flujo-de-los-datos)
+7. [Calidad de los Datos](#-calidad-de-los-datos)
+8. [Instalación y Configuración](#-instalación-y-configuración)
+9. [Uso del Pipeline](#-uso-del-pipeline)
+10. [Estructura del Proyecto](#-estructura-del-proyecto)
+11. [KPIs Generados](#-kpis-generados)
+12. [Monitoreo y Logs](#-monitoreo-y-logs)
+13. [Troubleshooting](#-troubleshooting)
+14. [Roadmap](#-roadmap)
+15. [Contribuciones](#-contribuciones)
+16. [Licencia](#-licencia)
+17. [Contacto](#-contacto)
 
 ---
 
